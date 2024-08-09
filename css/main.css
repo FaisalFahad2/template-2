@@ -1,0 +1,150 @@
+/* Start global ruls */
+:root {
+  --main-color: #19c8fa;
+  --transparent-color: rgb(15 116 143 / 70%);
+  --section-padding: 100px;
+  --section-back-color: white;
+}
+
+* {
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.container {
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+
+/* small widht  */
+
+@media (min-width:768) {
+  .container {
+    width: 770px;
+  }
+}
+
+/* medium widht  */
+@media (min-width:992px) {
+  .container {
+    width: 750px;
+  }
+}
+
+/* big widht  */
+@media (min-width:1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+section {
+  text-align: center;
+  padding: var(--section-padding);
+}
+
+.main-heading {
+  color: black;
+  font-size: 40px;
+  margin: 0;
+  margin-bottom: 70px;
+  font-weight: normal;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.main-heading::before {
+  content: '';
+  position: absolute;
+  background-color: black;
+  height: 2px;
+  width: 120px;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.main-heading::after {
+  content: '';
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background-color: white;
+  border: solid black 2px;
+  border-radius: 50%;
+  bottom: -38px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.main-heading+p {
+  margin: 0 auto 100px;
+  line-height: 2;
+  width: 550px;
+  max-width: 100%;
+}
+
+p {
+  color: #777;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+/* End global ruls */
+
+/* Start header */
+header {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.logo {
+  display: inline-block;
+}
+
+.logo img {
+  height: 40px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+ul li a {
+  padding: 40px 10px;
+}
+
+/* End header */
