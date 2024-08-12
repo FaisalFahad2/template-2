@@ -12,6 +12,8 @@
   -webkit-box-sizing: border-box;
   -o-box-sizing: border-box;
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 .container {
@@ -28,44 +30,42 @@ body {
 }
 
 
-/* small widht  */
-
-@media (min-width:768) {
-  .container {
-    width: 770px;
-  }
-}
-
-/* medium widht  */
-@media (min-width:992px) {
+/* Small */
+@media (min-width: 768px) {
   .container {
     width: 750px;
   }
 }
 
-/* big widht  */
-@media (min-width:1200px) {
+/* Medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+/* Large */
+@media (min-width: 1200px) {
   .container {
     width: 1170px;
   }
 }
 
-section {
-  text-align: center;
-  padding: var(--section-padding);
+.main-heading {
+  width: 100%;
 }
 
-.main-heading {
+.main-heading h2 {
   color: black;
   font-size: 40px;
-  margin: 0;
   margin-bottom: 70px;
   font-weight: normal;
   text-transform: uppercase;
   position: relative;
+  text-align: center;
 }
 
-.main-heading::before {
+.main-heading h2::before {
   content: '';
   position: absolute;
   background-color: black;
@@ -76,7 +76,7 @@ section {
   transform: translateX(-50%);
 }
 
-.main-heading::after {
+.main-heading h2::after {
   content: '';
   position: absolute;
   width: 14px;
@@ -89,11 +89,12 @@ section {
   transform: translateX(-50%);
 }
 
-.main-heading+p {
+.main-heading p {
   margin: 0 auto 100px;
   line-height: 2;
   width: 550px;
   max-width: 100%;
+  text-align: center;
 }
 
 p {
@@ -120,31 +121,296 @@ header {
 
 header .container {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  position: relative;
+  min-height: 97px;
 }
 
+header .container::after {
+  content: '';
+  height: 1px;
+  width: calc(100% - 30px);
+  background-color: #a2a2a2;
+  position: absolute;
+  bottom: 0;
+  left: 15px;
+  z-index: 1;
+}
 
-.logo {
+header .logo {
   display: inline-block;
 }
 
-.logo img {
+header .logo img {
   height: 40px;
 }
 
-nav {
+header nav {
   display: flex;
-  justify-content: space-between;
+  flex: 1;
+  justify-content: right;
 }
 
-ul {
-  display: flex;
-  justify-content: space-between;
+.menu {
+  display: none;
+  color: white;
+  align-self: center;
+  font-size: 22px;
 }
 
-ul li a {
+@media (max-width:768px) {
+  header ul {
+    display: none !important;
+    flex-flow: wrap column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .menu {
+    display: inline-block;
+  }
+
+  .menu:hover+ul {
+    display: flex !important;
+  }
+
+  .menu:hover+ul li a {
+    justify-content: left;
+    padding: 15px !important;
+    width: 100%;
+  }
+}
+
+
+header ul {
+  display: flex;
+}
+
+header .container nav ul li a {
   padding: 40px 10px;
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  position: relative;
+  z-index: 2;
+}
+
+header .container nav ul li:first-child a {
+  color: var(--main-color);
+  border-bottom: solid var(--main-color) 1px;
+}
+
+header .container nav ul li a:hover {
+  color: var(--main-color);
+  border-bottom: solid 1px var(--main-color);
+}
+
+header nav .form {
+  width: 40px;
+  height: 30px;
+  position: relative;
+  border-left: solid white 1px;
+  margin-left: 30px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  align-self: center;
+}
+
+header nav .form i {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 /* End header */
+/* Start Landing */
+
+.landing {
+  background-image: url(https://elzerowebschool.github.io/HTML_And_CSS_Template_Two/images/landing.jpg
+);
+  background-size: cover;
+  min-height: 100vb;
+  position: relative;
+}
+
+.landing .overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0 0 0 / 60%);
+}
+
+.text {
+  color: #fff !important;
+  background-color: var(--transparent-color);
+  position: absolute;
+  width: 50%;
+  top: 50%;
+  translate: 0 -50%;
+  padding: 50px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.landing .text {
+  left:0
+}
+
+.text .content {
+  max-width: 500px;
+}
+
+.text h1 {
+  font-weight: normal;
+  margin: 0;
+  margin-bottom: 20px;
+  font-size: 32px;
+  line-height: 1.5;
+}
+
+.text p {
+  color: #fff;
+  line-height: 2;
+  font-size: 14px;
+}
+
+.landing .overlay i:first-of-type {
+  color: #ddd;
+  position: absolute;
+  left: 30px;
+  top: 50%;
+  translate: 0 -50%;
+}
+
+.landing .overlay i:last-of-type {
+  color: #ddd;
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  translate: 0 -50%;
+}
+
+@media (max-width:768px) {
+  .text {
+    width: 100% !important;
+    justify-content: flex-start !important;
+  }
+
+  .text .content {
+    max-width: 100%;
+  }
+
+  .landing .overlay i {
+    display: none;
+  }
+}
+
+.landing ul {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  left: 50%;
+  bottom: 30px;
+  width: 80px;
+  translate: -56%;
+}
+
+.landing ul li {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid white;
+}
+
+.landing ul :nth-child(2) {
+  background-color: var(--main-color);
+  border: none;
+}
+
+/* End Landing */
+/* start services */
+
+section.services {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
+
+@media (min-width:768px) {
+  .services-contetn {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    grid-column-gap: 40px;
+    grid-row-gap: 60px;
+  }
+}
+
+.srv-box {
+  display: flex;
+}
+
+.srv-box i {
+  margin-right: 50px;
+}
+
+.srv-box h3 {
+  color: var(--main-color);
+  margin-bottom: 30px;
+}
+
+.srv-box p {
+  color: #777;
+  line-height: 2;
+}
+
+@media (max-width:768px) {
+  .srv-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .srv-box i {
+    margin: 0 0 30px;
+  }
+}
+
+/* End services */
+/* Start design  */
+.design {
+  position: relative;
+}
+
+.design::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.design .text {
+  right: 0;
+  display: block;
+}
+
+.design .text div:not(:last-of-type) {
+  margin-bottom: 30px;
+}
+
+.design .content div p,
+.design .content div i{
+  display: inline-block;
+}
+/* End design  */
