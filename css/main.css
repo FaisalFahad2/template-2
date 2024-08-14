@@ -29,7 +29,6 @@ body {
   font-family: "Open Sans", sans-serif;
 }
 
-
 /* Small */
 @media (min-width: 768px) {
   .container {
@@ -66,7 +65,7 @@ body {
 }
 
 .main-heading h2::before {
-  content: '';
+  content: "";
   position: absolute;
   background-color: black;
   height: 2px;
@@ -77,7 +76,7 @@ body {
 }
 
 .main-heading h2::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 14px;
   height: 14px;
@@ -127,7 +126,7 @@ header .container {
 }
 
 header .container::after {
-  content: '';
+  content: "";
   height: 1px;
   width: calc(100% - 30px);
   background-color: #a2a2a2;
@@ -158,7 +157,7 @@ header nav {
   font-size: 22px;
 }
 
-@media (max-width:768px) {
+@media (max-width: 768px) {
   header ul {
     display: none !important;
     flex-flow: wrap column;
@@ -183,7 +182,6 @@ header nav {
     width: 100%;
   }
 }
-
 
 header ul {
   display: flex;
@@ -234,14 +232,13 @@ header nav .form i {
 /* Start Landing */
 
 .landing {
-  background-image: url(https://elzerowebschool.github.io/HTML_And_CSS_Template_Two/images/landing.jpg
-);
+  background-image: url(https://elzerowebschool.github.io/HTML_And_CSS_Template_Two/images/landing.jpg);
   background-size: cover;
   min-height: 100vb;
   position: relative;
 }
 
-.landing .overlay {
+.overlay {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -253,15 +250,15 @@ header nav .form i {
   background-color: var(--transparent-color);
   position: absolute;
   width: 50%;
-  top: 50%;
-  translate: 0 -50%;
   padding: 50px;
   display: flex;
   justify-content: flex-end;
 }
 
 .landing .text {
-  left: 0
+  translate: 0 -50%;
+  top: 50%;
+  left: 0;
 }
 
 .text .content {
@@ -298,7 +295,7 @@ header nav .form i {
   translate: 0 -50%;
 }
 
-@media (max-width:768px) {
+@media (max-width: 768px) {
   .text {
     width: 100% !important;
     justify-content: flex-start !important;
@@ -313,7 +310,7 @@ header nav .form i {
   }
 }
 
-.landing ul {
+.landing ul.bull {
   position: absolute;
   display: flex;
   justify-content: space-between;
@@ -323,14 +320,14 @@ header nav .form i {
   translate: -56%;
 }
 
-.landing ul li {
+.landing ul.bull li {
   width: 20px;
   height: 20px;
   border-radius: 50%;
   border: 1px solid white;
 }
 
-.landing ul :nth-child(2) {
+.landing ul.bull :nth-child(2) {
   background-color: var(--main-color);
   border: none;
 }
@@ -343,7 +340,7 @@ section.services {
   padding-bottom: var(--section-padding);
 }
 
-@media (min-width:768px) {
+@media (min-width: 768px) {
   .services-contetn {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
@@ -370,7 +367,7 @@ section.services {
   line-height: 2;
 }
 
-@media (max-width:768px) {
+@media (max-width: 768px) {
   .srv-box {
     display: flex;
     flex-direction: column;
@@ -388,10 +385,17 @@ section.services {
 /* Start design  */
 .design {
   position: relative;
+  padding: var(--section-padding) 0;
+  background-image: url(https://elzerowebschool.github.io/HTML_And_CSS_Template_Two/images/design-features.jpg);
+  height: 600px;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
 }
 
 .design::before {
-  content: '';
+  content: "";
   position: absolute;
   width: 100%;
   height: 100%;
@@ -400,18 +404,442 @@ section.services {
   background-color: rgba(0, 0, 0, 0.6);
 }
 
+.design .image,
+.design .text {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+}
+
+.design .image {
+  text-align: center;
+  bottom: -150px;
+}
+
+@media (max-width: 767px) {
+  .design .image {
+    display: none;
+  }
+}
+
 .design .text {
   right: 0;
   display: block;
 }
 
-.design .text div:not(:last-of-type) {
-  margin-bottom: 30px;
+.design .text h2 {
+  margin-bottom: 50px;
+  font-weight: normal;
+  text-transform: uppercase;
 }
 
-.design .content div p,
-.design .content div i {
-  display: inline-block;
+.design .text li {
+  padding: 15px 0;
+}
+
+.design .text li::before {
+  font-family: "Font Awesome 6 Free";
+  content: "\f108";
+  font-weight: 900;
+  margin-right: 20px;
+  position: relative;
+  top: 1px;
 }
 
 /* End design  */
+/* Start portfolio */
+.portfolio {
+  padding: var(--section-padding) 0;
+}
+
+.portfolio .container ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.portfolio .container ul li {
+  padding: 10px;
+}
+
+.portfolio .container ul li.active {
+  color: white;
+  background-color: var(--main-color);
+}
+
+.portfolio .img-content {
+  display: flex;
+  justify-content: center;
+  flex-flow: wrap;
+  margin-top: 60px;
+}
+
+.img-content .box {
+  position: relative;
+  overflow: hidden;
+  perspective: 100px;
+  transform-style: preserve-3d;
+}
+
+@media (min-width: 768px) {
+  .portfolio .img-content .box {
+    flex-basis: 50%;
+  }
+}
+
+@media (min-width: 1199px) {
+  .portfolio .img-content .box {
+    flex-basis: 25%;
+  }
+}
+
+.portfolio .img-content .box img {
+  max-width: 100%;
+  transition: 0.3s;
+}
+
+.img-content .box .caption {
+  position: absolute;
+  bottom: 0;
+  background-color: white;
+  padding: 20px;
+  width: 100%;
+  bottom: -100px;
+  transition: 0.3s;
+}
+
+.img-content .box .caption h4 {
+  font-weight: normal;
+}
+
+.img-content .box .caption p {
+  color: var(--main-color);
+  margin-top: 10px;
+}
+
+.img-content .box:hover .caption {
+  bottom: 0;
+}
+
+.img-content .box:hover img {
+  transform: rotate(3deg) scale(1.1) translateZ(10px);
+}
+
+.portfolio .more {
+  background-color: var(--main-color);
+  padding: 15px 20px;
+  color: white;
+  display: block;
+  width: fit-content;
+  margin: 30px auto;
+  text-transform: uppercase;
+  transition: 0.2s;
+}
+
+.portfolio .more:hover {
+  scale: 1.08;
+}
+
+/* End portfolio */
+/* Start Video */
+
+.video {
+  position: relative;
+}
+
+.video::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.video video {
+  max-width: 100%;
+}
+
+.video .text {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  translate: 0 -50%;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+}
+
+.video .text h2 {
+  font-weight: normal;
+}
+
+.video .text p {
+  margin: 24px 0 30px;
+  line-height: 1;
+  font-size: 16px;
+}
+
+.video .text button {
+  background-color: black;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  color: white;
+  border: none;
+}
+
+/* End Video */
+/* Start About */
+.about {
+  padding-top: var(--section-padding);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.about img {
+  position: relative;
+  bottom: -150px;
+  max-width: 100%;
+  margin-top: -150px;
+}
+
+/* End About */
+/* Start Stats */
+.stats {
+  padding: var(--section-padding) 0;
+  background-image: url(https://elzerowebschool.github.io/HTML_And_CSS_Template_Two/images/stats.png);
+  background-size: cover;
+  position: relative;
+}
+
+.stats::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.stats .text {
+  position: relative;
+  width: 100%;
+  justify-content: space-around;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.stats .box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+}
+
+@media (min-width: 768px) {
+  .stats .box {
+    flex-basis: 50%;
+  }
+}
+
+@media (min-width: 992px) {
+  .stats .box {
+    flex-basis: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  .stats .box {
+    flex-basis: 100%;
+  }
+}
+
+.stats .box i {
+  background-color: black;
+  padding: 12px;
+  border-radius: 50%;
+}
+
+.stats .box .number {
+  font-size: 50px;
+  font-weight: bold;
+  margin-bottom: -10px;
+}
+
+/* End Stats */
+/* Start our skills */
+
+.our-skill {
+  padding: var(--section-padding) 0;
+}
+
+.our-skill .container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.our-skill .container>div {
+  flex-basis: 45%;
+}
+
+@media (max-width:992px) {
+  .our-skill .container>div {
+    flex-basis: 100%;
+  }
+}
+
+
+.our-skill div>h3 {
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+.our-skill .container>div>p {
+  margin-bottom: 60px;
+  text-align: center;
+  line-height: 2;
+}
+
+.our-skill .testimonials .box {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+@media (max-width:768px) {
+  .our-skill .testimonials .box {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .our-skill .box img {
+    margin: 0 auto 20px !important;
+  }
+}
+
+.our-skill .testimonials .box img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  margin-right: 50px;
+  margin-top: 25px;
+}
+
+.our-skill .testimonials .box div {
+  border-bottom: 1px solid #ccc;
+  line-height: 1.8;
+}
+
+.our-skill .testimonials .box div p {
+  font-size: 14px;
+  text-align: right;
+  margin-bottom: 10px;
+}
+
+.our-skill .testimonials .bull {
+  display: flex;
+  width: 62px;
+  height: 15px;
+  justify-content: space-between;
+  margin: 50px auto;
+}
+
+.our-skill .testimonials .bull li {
+  width: 14px;
+  height: 14x;
+  border-radius: 50%;
+  border: solid #aaa 1px;
+}
+
+.our-skill .testimonials .bull .active {
+  background-color: var(--main-color);
+  border-color: var(--main-color);
+}
+
+.our-skill .prog-holder {
+  margin-bottom: 40px;
+}
+
+.our-skill .prog-holder h4 {
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  font-weight: normal;
+}
+
+.our-skill .prog-holder .prog {
+  background-color: #dedadc;
+  width: 100%;
+  height: 30px;
+}
+
+.our-skill .prog-holder span {
+  background-color: var(--main-color);
+  height: 30px;
+  display: block;
+  position: relative;
+}
+
+.our-skill .prog-holder span::before {
+  content: attr(width);
+  background-color: black;
+  color: white;
+  padding: 4px 0;
+  border-radius: 4px;
+  position: absolute;
+  width: 40px;
+  text-align: center;
+  top: -40px;
+  right: -18px;
+}
+
+.our-skill .prog-holder span::after {
+  content: '';
+  border: solid 10px;
+  border-color: black transparent transparent transparent;
+  position: absolute;
+  top: -17px;
+  right: -9px;
+}
+
+/* End our skills */
+/* Start quote */
+.quote {
+  background-image: url(https://elzerowebschool.github.io/HTML_And_CSS_Template_Two/images/quote.jpg);
+  background-size: cover;
+  padding: var(--section-padding) 0;
+  text-align: center;
+  color: white !important;
+  position: relative;
+}
+
+.quote::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0 0 0 / 75%);
+}
+
+.quote .container {
+  z-index: 2;
+  position: relative;
+}
+
+.quote q {
+  font-size: 30px;
+}
+
+.quote p {
+  margin-top: 20px;
+  color: white;
+}
+
+/* End quote */
