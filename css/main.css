@@ -109,6 +109,16 @@ a {
   text-decoration: none;
 }
 
+.over::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
 /* End global ruls */
 
 /* Start header */
@@ -394,15 +404,6 @@ section.services {
   overflow: hidden;
 }
 
-.design::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.6);
-}
 
 .design .image,
 .design .text {
@@ -547,16 +548,6 @@ section.services {
   position: relative;
 }
 
-.video::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.6);
-}
-
 .video video {
   max-width: 100%;
 }
@@ -613,16 +604,6 @@ section.services {
   background-image: url(https://elzerowebschool.github.io/HTML_And_CSS_Template_Two/images/stats.png);
   background-size: cover;
   position: relative;
-}
-
-.stats::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.6);
 }
 
 .stats .text {
@@ -818,13 +799,7 @@ section.services {
   position: relative;
 }
 
-.quote::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
+.quote.over::before {
   background-color: rgb(0 0 0 / 75%);
 }
 
@@ -843,3 +818,103 @@ section.services {
 }
 
 /* End quote */
+
+/* Start Pricing */
+
+.pricing {
+  padding: var(--section-padding) 0;
+}
+
+.pricing .pricing-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.pricing .box {
+  text-align: center;
+  background-color: #fcfcfc;
+}
+
+.pricing .head {
+  border-top: 1px var(--main-color) solid;
+  border-bottom: 1px var(--main-color) solid;
+  padding: 40px 20px;
+}
+
+.pricing .head h3 {
+  margin-bottom: 20px;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+.pricing .head span {
+  font-size: 60px;
+  font-weight: bold;
+  position: relative;
+}
+
+.pricing .head span::before {
+  content: '$';
+  position: relative;
+  font-size: 25px;
+  margin-right: 15px;
+  font-weight: normal;
+  top: -40px;
+}
+
+.pricing .head span::after {
+  content: '/Mo';
+  font-size: 20px;
+  position: relative;
+  margin-left: 15px;
+}
+
+.pricing ul {
+  border-bottom: var(--main-color) solid 1px;
+}
+
+.pricing ul li {
+  position: relative;
+  padding: 20px;
+}
+
+.pricing ul li:not(:last-child)::after {
+  position: absolute;
+  content: '';
+  width: 50%;
+  height: 1px;
+  bottom: 0;
+  background-color: var(--main-color);
+  left: 25%;
+}
+
+.pricing .foot a {
+  padding: 20px;
+  border: var(--main-color) 1px solid;
+  margin: 30px auto;
+  display: block;
+  width: fit-content;
+}
+
+.pricing .container>p {
+  text-align: center;
+  margin: 50px auto 20px;
+  font-size: 20px;
+  color: black;
+}
+
+.pricing .container>a {
+  color: white;
+  text-transform: capitalize;
+  background-color: var(--main-color);
+  display: block;
+  margin: 0 auto;
+  width: fit-content;
+  text-align: center;
+  padding: 15px 30px;
+}
+
+/* End Pricing */
+/* Start subscribe */
+/* End subscribe */
