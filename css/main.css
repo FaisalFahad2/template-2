@@ -917,4 +917,233 @@ section.services {
 
 /* End Pricing */
 /* Start subscribe */
+
+.subscribe {
+  position: relative;
+  background-image: url(https://elzerowebschool.github.io/HTML_And_CSS_Template_Two/images/subscribe.jpg);
+  padding: var(--section-padding) 0;
+}
+
+.subscribe.over::before {
+  background-color: rgb(0 0 0 / 50%);
+  z-index: 0;
+}
+
+.subscribe .container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width:991px) {
+  .subscribe .container {
+    flex-direction: column !important;
+  }
+
+  .subscribe p {
+    margin-top: 30px;
+  }
+}
+
+.subscribe form {
+  display: flex;
+  max-width: 100%;
+  width: 500px;
+  height: 60px;
+}
+
+.subscribe form i {
+  position: relative;
+  color: white;
+  top: 50%;
+  left: 40px;
+}
+
+.subscribe form input {
+  border: white 1px solid;
+  background-color: transparent;
+  color: white;
+  padding: 10px 20px;
+}
+
+.subscribe form input[type=email]::placeholder {
+  color: white;
+  position: relative;
+  left: 30px;
+}
+
+.subscribe form input[type=submit] {
+  width: 130px;
+  background-color: var(--main-color);
+  border-left: none;
+  text-transform: uppercase;
+}
+
+.subscribe p {
+  color: white;
+  line-height: 2;
+  margin-left: 50px;
+}
+
+
 /* End subscribe */
+/* Start Contact Us */
+.contact-us {
+  padding: var(--section-padding) 0;
+}
+
+.contact-us .contact {
+  display: flex;
+  justify-content: space-between;
+}
+
+.contact form {
+  flex-basis: 70%;
+}
+
+.contact form input:not([type=submit]),
+.contact textarea {
+  padding: 20px;
+  display: block;
+  width: 100%;
+  margin-bottom: 30px;
+  border: 1px solid #ccc;
+}
+
+.contact form textarea {
+  height: 200px;
+}
+
+.contact form input[type=submit] {
+  background-color: var(--main-color);
+  padding: 20px;
+  border: none;
+  color: white;
+  margin-left: auto;
+  display: block;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.contact .info {
+  width: 25%;
+  text-align: left;
+}
+
+.contact .info h4 {
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+.contact .info p {
+  line-height: 1.8;
+}
+
+.contact .info h4:nth-of-type(2) {
+  margin: 90px 0 30px;
+}
+
+.contact .info address {
+  line-height: 2;
+  color: #777;
+}
+
+footer {
+  padding: calc(var(--section-padding) / 2) 0;
+  background-image: url(https://elzerowebschool.github.io/HTML_And_CSS_Template_Two/images/subscribe.jpg);
+  position: relative;
+  text-align: center;
+  background-size: cover;
+}
+
+footer .container {
+  position: relative;
+  z-index: 1;
+}
+
+footer .logo {
+  margin-bottom: 20px;
+}
+
+footer .container > p:first-of-type {
+  margin: 20px auto;
+  border-bottom: 1px white solid;
+  width: fit-content;
+  padding: 20px;
+  color: white;
+  font-size: 22px;
+  text-transform: uppercase;
+}
+
+footer .social-icons {
+  margin: 0 0 60px;
+  height: 40px;
+  position: relative;
+}
+
+.social-icons p {
+  background-color: black;
+  color: white;
+  border-radius: 50%;
+  padding: 5px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  z-index: 23;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  transition: .5s;
+}
+
+@keyframes social {
+  100% {
+    width: 250px;
+  }
+}
+
+footer i {
+  color: white;
+  margin-right: 30px;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transition: .3s .1s;
+}
+
+footer .social-icons p:hover {
+  opacity: 0;
+  animation: social .3s .5s forwards;
+}
+
+footer .social-icons p:hover + i{
+  left: 40%;
+}
+
+footer .social-icons p:hover ~ i:nth-of-type(2) {
+  left: 45%;
+}
+footer .social-icons p:hover ~ i:nth-of-type(3){
+  left: 55%;
+}
+
+footer .social-icons p:hover ~ i:nth-of-type(4) {
+  left: 60%;
+}
+
+.copy {
+  color: white;
+}
+
+footer span {
+  color: var(--main-color);
+}
+
+
+/* End Contact Us */

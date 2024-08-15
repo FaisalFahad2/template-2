@@ -9,15 +9,16 @@
   <!-- all normalize elment -->
   <link rel="stylesheet" href="css/normalize.css" />
   <!-- icon fonts -->
-  <link rel="stylesheet" href="css/all.min.css" />
   <!-- main css file  -->
-  <link rel="stylesheet" href="css/main.css" />
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/all.min.css" />
   <link
     href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Jomhuria&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
     rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="css/main.css" />
 </head>
 
 <body>
@@ -420,7 +421,8 @@
   <section class="subscribe over">
     <div class="container">
       <form action="">
-        <input type="email" placeholder="Your Email">
+        <i class="far fa-envelope fa-lg"></i>
+        <input type="email" name="email" placeholder="Your Email">
         <input type="submit" value="subscribe">
       </form>
       <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blan dit aliquet elit, eget tincidunt.
@@ -428,6 +430,48 @@
     </div>
   </section>
   <!-- End subscribe -->
+  <!-- Start Contact Us -->
+  <!-- End Contact Us -->
+  <section class="contact-us">
+    <div class="container">
+      <div class="main-heading">
+        <h2>contact-us</h2>
+        <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt.
+        </p>
+      </div>
+      <div class="contact">
+        <form action="">
+          <input type="text" name="name" placeholder="Your Name">
+          <input type="email" name="email" placeholder="Your Email">
+          <textarea name="message" class="message" placeholder="Your Message"></textarea>
+          <input type="submit" value="Sand Message">
+        </form>
+        <div class="info">
+          <h4>Get In Touch</h4>
+          <p>+00 123.456.789<br>
+            +00 123.456.789</p>
+          <h4>Where We Are</h4>
+          <address>Awesome Address 17<br>New York, NYC<br>123-4567-890<br>USA</address>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="over">
+    <div class="container">
+      <div class="logo">
+        <img src="https://elzerowebschool.github.io/HTML_And_CSS_Template_Two/images/logo.png" alt="">
+      </div>
+      <p>We Are Social</p>
+      <div class="social-icons">
+        <p>Social</p>
+        <i class="fab fa-facebook-f"></i>
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fas fa-home"></i>
+        <i class="fab fa-linkedin"></i>
+      </div>
+      <p class="copy">© 2021 <span>Kasper</span> All Right Reserved</p>
+    </div>
+  </footer>
 </body>
 
 </html>
