@@ -119,6 +119,14 @@ a {
   background-color: rgba(0, 0, 0, 0.6);
 }
 
+.but {
+  transition: .3s;
+}
+
+.but:hover {
+  scale: 1.07;
+}
+
 /* End global ruls */
 
 /* Start header */
@@ -463,7 +471,7 @@ section.services {
   padding: 10px;
 }
 
-.portfolio .container ul li.active {
+.portfolio .container ul li.active {  
   color: white;
   background-color: var(--main-color);
 }
@@ -897,6 +905,10 @@ section.services {
   width: fit-content;
 }
 
+.pricing .foot>a:hover {
+  color: white;
+  background-color: var(--main-color);
+}
 .pricing .container>p {
   text-align: center;
   margin: 50px auto 20px;
@@ -914,6 +926,7 @@ section.services {
   text-align: center;
   padding: 15px 30px;
 }
+
 
 /* End Pricing */
 /* Start subscribe */
@@ -1099,12 +1112,14 @@ footer .social-icons {
   top: 50%;
   left: 50%;
   translate: -50% -50%;
-  transition: .5s;
+  transition: .3s;
 }
 
 @keyframes social {
   100% {
-    width: 250px;
+    width: 350px;
+    height: 150px;
+    margin-top: 10px;
   }
 }
 
@@ -1119,7 +1134,7 @@ footer i {
 
 footer .social-icons p:hover {
   opacity: 0;
-  animation: social .3s .5s forwards;
+  animation: social .3s .3s forwards;
 }
 
 footer .social-icons p:hover + i{
