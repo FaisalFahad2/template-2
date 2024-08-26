@@ -190,8 +190,8 @@ header nav {
     display: inline-block;
   }
 
-  .menu:hover+ul ,
-  .menu+ul:hover{
+  .menu:hover+ul,
+  .menu+ul:hover {
     height: 277.5px;
   }
 
@@ -492,7 +492,7 @@ section.services {
   margin-top: 60px;
 }
 
-.img-content .box {
+.img-content figure {
   position: relative;
   overflow: hidden;
   perspective: 100px;
@@ -500,23 +500,23 @@ section.services {
 }
 
 @media (min-width: 768px) {
-  .portfolio .img-content .box {
+  .portfolio .img-content figure {
     flex-basis: 50%;
   }
 }
 
 @media (min-width: 1199px) {
-  .portfolio .img-content .box {
+  .portfolio .img-content figure {
     flex-basis: 25%;
   }
 }
 
-.portfolio .img-content .box img {
+.portfolio .img-content figure img {
   max-width: 100%;
   transition: 0.3s;
 }
 
-.img-content .box .caption {
+.img-content figure figcaption {
   position: absolute;
   bottom: 0;
   background-color: white;
@@ -526,21 +526,21 @@ section.services {
   transition: 0.3s;
 }
 
-.img-content .box .caption h4 {
+.img-content figure figcaption h4 {
   font-weight: normal;
 }
 
-.img-content .box .caption p {
+.img-content figure figcaption p {
   color: var(--main-color);
   margin-top: 10px;
 }
 
-.img-content .box:hover .caption {
+.img-content figure:hover figcaption {
   bottom: 0;
 }
 
-.img-content .box:hover img {
-  transform: rotate(3deg) scale(1.1) translateZ(10px);
+.img-content figure:hover img {
+  transform: rotate(1,1,1,4deg) scale(1.1) translateZ(10px);
 }
 
 .portfolio .more {
@@ -612,6 +612,13 @@ section.services {
   bottom: -150px;
   max-width: 100%;
   margin-top: -150px;
+}
+
+@media (max-width:767px) {
+  .about img {
+    bottom: -60px;
+    margin-top: -60px;
+  }
 }
 
 /* End About */
@@ -944,6 +951,7 @@ section.services {
 .subscribe {
   position: relative;
   background-image: url(https://elzerowebschool.github.io/HTML_And_CSS_Template_Two/images/subscribe.jpg);
+  background-size: cover;
   padding: var(--section-padding) 0;
 }
 
@@ -972,15 +980,17 @@ section.services {
 .subscribe form {
   display: flex;
   max-width: 100%;
-  width: 500px;
   height: 60px;
+  width: 500px;
+  position: relative;
 }
 
 .subscribe form i {
-  position: relative;
+  position: absolute;
   color: white;
   top: 50%;
-  left: 40px;
+  left: 35px;
+  translate: -50%;
 }
 
 .subscribe form input {
@@ -988,12 +998,18 @@ section.services {
   background-color: transparent;
   color: white;
   padding: 10px 20px;
+  width: calc(100% - 130px);
+  caret-color: var(--main-color);
+  outline: none;
+}
+
+.subscribe form input[type=email] {
+  padding: 20px 20px 20px 60px;
 }
 
 .subscribe form input[type=email]::placeholder {
   color: white;
   position: relative;
-  left: 30px;
 }
 
 .subscribe form input[type=submit] {
@@ -1007,6 +1023,12 @@ section.services {
   color: white;
   line-height: 2;
   margin-left: 50px;
+}
+
+@media (max-width:991px) {
+  .subscribe p {
+    margin-left: 0;
+  }
 }
 
 
@@ -1024,6 +1046,7 @@ section.services {
 .contact form {
   flex-basis: 70%;
 }
+
 
 .contact form input:not([type=submit]),
 .contact textarea {
@@ -1074,6 +1097,23 @@ section.services {
   color: #777;
 }
 
+@media (max-width:768px) {
+  .contact-us .contact {
+    flex-wrap: wrap-reverse;
+  }
+
+  .contact form {
+    flex-basis: 100%;
+  }
+
+  .contact-us .info {
+    margin-bottom: 40px;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+/* Start footer */
 footer {
   padding: calc(var(--section-padding) / 2) 0;
   background-image: url(https://elzerowebschool.github.io/HTML_And_CSS_Template_Two/images/subscribe.jpg);
@@ -1127,7 +1167,7 @@ footer .social-icons {
 
 @keyframes social {
   100% {
-    width: 350px;
+    width: 100%;
     height: 150px;
     margin-top: 10px;
   }
@@ -1148,19 +1188,19 @@ footer .social-icons p:hover {
 }
 
 footer .social-icons p:hover+a {
-  left: 40%;
+  left: 25%;
 }
 
 footer .social-icons p:hover~a:nth-of-type(2) {
-  left: 45%;
+  left: 35%;
 }
 
 footer .social-icons p:hover~a:nth-of-type(3) {
-  left: 55%;
+  left: 60%;
 }
 
 footer .social-icons p:hover~a:nth-of-type(4) {
-  left: 60%;
+  left: 70%;
 }
 
 .copy {
